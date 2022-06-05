@@ -1,1 +1,10 @@
-
+spring:
+  r2dbc:
+    password: postgres
+    username: postgres
+    url: r2dbc:postgresql://localhost:5433/postgres
+  liquibase:
+    change-log: db/changelog/master.yml
+    user: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5433/postgres

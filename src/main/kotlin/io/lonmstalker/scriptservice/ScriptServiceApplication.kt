@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class ScriptServiceApplication
 
 fun main(args: Array<String>) {
-	runApplication<ScriptServiceApplication>(*args)
+    runApplication<ScriptServiceApplication>(*args)
 }
