@@ -5,7 +5,7 @@ import java.util.UUID
 
 @Table("scripts")
 data class Script(
-    internal var id: UUID,
-    internal var title: String,
-    internal var value: String
+    internal var id: UUID? = null,
+    internal var title: String? = null,
+    internal var value: String? = null
 )

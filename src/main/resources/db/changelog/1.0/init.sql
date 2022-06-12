@@ -6,4 +6,8 @@ CREATE TABLE scripts (
 
 INSERT INTO scripts(title, value) VALUES
                                       ('example script',
-                                       '(function(record) {console.log(''input:'' + record.getId());})')
+                                       '(function(record) {console.log(''input:'' + record.getId());})'),
+                                      ('example script with binding',
+                                       '(function(record) {
+                                       console.log(clientCall());
+                                       })');
