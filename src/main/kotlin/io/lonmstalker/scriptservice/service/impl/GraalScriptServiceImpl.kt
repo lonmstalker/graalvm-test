@@ -96,13 +96,13 @@ class GraalScriptServiceImpl(
         @JvmStatic
         private val typeReference = object : TypeReference<List<Script>>() {}
         @JvmStatic
-        private fun getBinging() = Supplier<String?> {
+        private fun getBinging() = java.util.function.Function<DomainObject, String?> { obj ->
             runBlocking {
                 webClient.get().uri("localhost:8080/list")
                     .retrieve()
                     .bodyToMono(List::class.java)
                     .map { objectMapper.convertValue(it, typeReference).firstOrNull()?.title }
-                    .doOnNext { println(">>>>>> called java code") }
+                    .doOnNext { println(">>>>>> called java code for id: ${obj.id}") }
                     .awaitFirstOrNull()
             }
         }

@@ -9,5 +9,5 @@ INSERT INTO scripts(title, value) VALUES
                                        '(function(record) {console.log(''input:'' + record.getId());})'),
                                       ('example script with binding',
                                        '(function(record) {
-                                       console.log(clientCall());
+                                       console.log(clientCall(record));
                                        })');
